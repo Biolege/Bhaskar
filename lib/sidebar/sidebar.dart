@@ -106,6 +106,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                      BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.StockClickedEvent);
                         },
                       ),
+                      
                       MenuItem(
                         icon: Icons.shopping_cart,
                         title: "Buy",

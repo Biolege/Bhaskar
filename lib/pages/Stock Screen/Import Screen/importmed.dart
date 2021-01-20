@@ -1,21 +1,10 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:pharmacy_bioledge/pages/Stock%20Screen/My Medicines/mymedicines.dart';
-import 'package:pharmacy_bioledge/pages/Stock%20Screen/StockWarning/My%20Medicines/stockwarn.dart';
+import 'package:pharmacy_bioledge/pages/Stock%20Screen/Import%20Screen/importmedine.dart';
+import 'package:pharmacy_bioledge/pages/Stock%20Screen/Import%20Screen/myimports.dart';
 
 
-class Inventory extends StatefulWidget {
-
-
-
-  @override
-  _InventoryState createState() => _InventoryState();
-}
-
-class _InventoryState extends State<Inventory> {
- 
-
+class ImportMeds extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,27 +13,29 @@ class _InventoryState extends State<Inventory> {
           margin: EdgeInsets.all(19),
           child:Column(
           children: [
-            
-            
             Row(
               children: [
-                Text('Inventory',style: TextStyle(
+                Text('Import meds',style: TextStyle(
                   fontSize: 25,
                   color: Colors.black,
-                  fontWeight: FontWeight.w300
+                  fontWeight: FontWeight.w400
                 ),),
               ],
             ),
-            SizedBox(height: 35,),
+            SizedBox(height: 18,),
+            
+             SizedBox(height: 35,),
             GestureDetector(
-           onTap: (){   pushNewScreen(context, screen: MyMedicines());},
+              onTap: (){
+                pushNewScreen(context, screen: ImportMedicine());
+              },
               child: Padding(
                 padding: const EdgeInsets.only(left:25),
                 child: Row(
                   children: [
                     Icon(Icons.add),
                     SizedBox(width: 10,),
-                    Text('My Medicines',style: TextStyle(
+                    Text('Import medicine  from others',style: TextStyle(
                       fontSize: 18,
                       color: Colors.green,
                       fontWeight: FontWeight.w300
@@ -56,8 +47,7 @@ class _InventoryState extends State<Inventory> {
             SizedBox(height: 30,),
             GestureDetector(
               onTap: (){
-                pushNewScreen(context, screen:StockWarning());
-               
+                pushNewScreen(context, screen: MyImports());
               },
               child: Padding(
                 padding: const EdgeInsets.only(left:25),
@@ -65,7 +55,7 @@ class _InventoryState extends State<Inventory> {
                   children: [
                     Icon(Icons.center_focus_strong),
                     SizedBox(width: 10,),
-                    Text('Stock warning',style: TextStyle(
+                    Text('My imports',style: TextStyle(
                       fontSize: 18,
                       color: Colors.green,
                       fontWeight: FontWeight.w300
@@ -81,7 +71,7 @@ class _InventoryState extends State<Inventory> {
                 children: [
                   Icon(Icons.call_missed_outgoing),
                   SizedBox(width: 10,),
-                  Text('Expiry manager',style: TextStyle(
+                  Text('Imports from biolege',style: TextStyle(
                     fontSize: 18,
                     color: Colors.green,
                     fontWeight: FontWeight.w300
